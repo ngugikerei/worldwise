@@ -3,6 +3,7 @@ import Product from './Pages/Product';
 import Pricing from './Pages/Pricing';
 import Homepage from './Pages/Homepage';
 import PageNotFound from './Pages/PegeNotFound';
+import AppLayout from './Pages/AppLayout';
 
 export default function Worldwise() {
   return (
@@ -12,6 +13,7 @@ export default function Worldwise() {
         <Route path="product" element={<Product />} />
         <Route path="pricing" element={<Pricing />} />
         <Route path="*" element={<PageNotFound />} />
+        <Route path="app" element={<AppLayout />} />
       </Routes>
     </BrowserRouter>
   );
