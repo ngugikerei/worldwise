@@ -5,6 +5,9 @@ import Homepage from './Pages/Homepage';
 import PageNotFound from './Pages/PegeNotFound';
 import AppLayout from './Pages/AppLayout';
 import Login from './Pages/Login';
+import Form from './components/Form';
+import City from './components/City';
+import CityList from './components/CityList';
 
 export default function Worldwise() {
   return (
@@ -14,9 +17,15 @@ export default function Worldwise() {
         <Route path="pricing" element={<Pricing />} />
         <Route path="product" element={<Product />} />
         <Route path="login" element={<Login />} />
-        <Route path="app" element={<AppLayout />} />
+        <Route path="app" element={<AppLayout />}>
+          <Route index element={<CityList />} />
+          <Route path="cities" element={<CityList />} />
+          <Route path="countries" element={<p>List of Countries</p>} />
+          <Route path="form" element={<Form />} />
+        </Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
   );
 }
+<p></p>;
