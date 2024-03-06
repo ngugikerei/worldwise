@@ -10,7 +10,9 @@ export default function Sidebar() {
       <AppNav />
       <Outlet />
       <footer className={styles.footer}>
-        <p> &copy; Copyright {new Date().getFullYear()} Worldwise Inc</p>
+        <p className={styles.copyright}>
+          &copy; Copyright {new Date().getFullYear()} Worldwise Inc
+        </p>
       </footer>
     </div>
   );
