@@ -1,8 +1,12 @@
 import CountryItem from './CountryItem';
 import styles from './CountryList.module.css';
 
-export default function CountryList({ cities }) {
+import { useCities } from '../../contexts/CitiesContext';
+
+export default function CountryList() {
+  const { cities } = useCities();
   //console.log(cities);
+
   //get list of countries from cities arrray
   //map over them and filter out duplicates
   const countries = cities.reduce((array, city) => {
