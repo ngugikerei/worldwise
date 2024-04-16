@@ -7,7 +7,6 @@ const CitiesContext = createContext();
 function CitiesProvider({ children }) {
   const [cities, setCities] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-
   const [currentCity, setCurrentCity] = useState({});
 
   //get city data from API from passed-in id, to display in city item
@@ -41,6 +40,7 @@ function CitiesProvider({ children }) {
 
     fetchCities();
   }, []);
+
   return (
     <CitiesContext.Provider value={{ cities, isLoading, currentCity, getCity }}>
       {children}
