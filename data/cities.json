@@ -25,27 +25,39 @@
       }
     },
     {
-      "id": "97ca",
-      "cityName": "Momba",
-      "country": "Tanzania, the United Republic of",
-      "emoji": "🇹🇿",
-      "date": "2024-04-19T07:51:24.791Z",
-      "notes": "Africa power",
+      "id": "2a04",
+      "cityName": "Kajiado",
+      "country": "Kenya",
+      "emoji": "🇰🇪",
+      "date": "2024-04-19T09:49:08.486Z",
+      "notes": "Lovely scenes",
       "position": {
-        "lat": "-8.581021215641842",
-        "lng": "32.51953125000001"
+        "lat": "-1.4939713066293112",
+        "lng": "36.95800781250001"
       }
     },
     {
-      "id": "91db",
-      "cityName": "Embu",
-      "country": "Kenya",
-      "emoji": "🇰🇪",
-      "date": "2024-04-19T07:51:33.383Z",
-      "notes": "Good roads",
+      "id": "a28a",
+      "cityName": "Soro",
+      "country": "Ethiopia",
+      "emoji": "🇪🇹",
+      "date": "2024-04-19T09:52:46.599Z",
+      "notes": "Coffee",
       "position": {
-        "lat": "-0.6371938961998727",
-        "lng": "37.77099609375001"
+        "lat": "7.471410908357838",
+        "lng": "37.55126953125001"
+      }
+    },
+    {
+      "id": "e8e6",
+      "cityName": "Djebilet Rosfa",
+      "country": "Algeria",
+      "emoji": "🇩🇿",
+      "date": "2024-04-19T09:57:09.433Z",
+      "notes": "",
+      "position": {
+        "lat": "34.92197103616377",
+        "lng": "0.7470703125000001"
       }
     }
   ]
