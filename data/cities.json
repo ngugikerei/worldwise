@@ -10,31 +10,43 @@
         "lat": 38.727881642324164,
         "lng": -9.140900099907554
       },
-      "id": 73930385
+      "id": "73930385"
     },
     {
-      "cityName": "Madrid",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2027-07-15T08:22:53.976Z",
-      "notes": "",
+      "id": "4cd3",
+      "cityName": "Saint-Cirgues-de-Malbert",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "date": "2024-04-19T07:51:12.346Z",
+      "notes": "Lovley Wine",
       "position": {
-        "lat": 40.46635901755316,
-        "lng": -3.7133789062500004
-      },
-      "id": 17806751
+        "lat": "45.089035564831036",
+        "lng": "2.39501953125"
+      }
     },
     {
-      "cityName": "Berlin",
-      "country": "Germany",
-      "emoji": "🇩🇪",
-      "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Amazing 😃",
+      "id": "97ca",
+      "cityName": "Momba",
+      "country": "Tanzania, the United Republic of",
+      "emoji": "🇹🇿",
+      "date": "2024-04-19T07:51:24.791Z",
+      "notes": "Africa power",
       "position": {
-        "lat": 52.53586782505711,
-        "lng": 13.376933665713324
-      },
-      "id": 9844333197
+        "lat": "-8.581021215641842",
+        "lng": "32.51953125000001"
+      }
+    },
+    {
+      "id": "91db",
+      "cityName": "Embu",
+      "country": "Kenya",
+      "emoji": "🇰🇪",
+      "date": "2024-04-19T07:51:33.383Z",
+      "notes": "Good roads",
+      "position": {
+        "lat": "-0.6371938961998727",
+        "lng": "37.77099609375001"
+      }
     }
   ]
 }

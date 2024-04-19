@@ -12,6 +12,7 @@ import { useUrlPosition } from '../../hooks/useUrlPostion';
 
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import { useCities } from '../../contexts/CitiesContext';
 
 export function convertToEmoji(countryCode) {
   const codePoints = countryCode
@@ -32,6 +33,7 @@ function Form() {
   const [isLoadingGeoCoding, setIsLoadingGeoCoding] = useState(false);
   const [geoCodingError, setGeoCodingError] = useState('');
 
+  const { addCity, isLoading } = useCities();
   const navigate = useNavigate();
 
   // use API to fetch data of city from lat, lng stored in the url
@@ -72,8 +74,8 @@ function Form() {
   if (isLoadingGeoCoding) return <Spinner />;
   if (geoCodingError) return <Message message={geoCodingError} />;
 
-  //handle submit data from form
-  function handleSubmit(event) {
+  //handle submit data from Form Componennt
+  async function handleSubmit(event) {
     event.preventDefault();
     if (!cityName || !date) return;
 
@@ -86,11 +88,16 @@ function Form() {
       position: { lat, lng },
     };
 
-    console.log(newCity);
+    //function returns a Promimse, hence await
+    await addCity(newCity);
+    navigate('/app/cities');
   }
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
+    <form
+      className={`${styles.form}${isLoading ? styles.loading : ''}`}
+      onSubmit={handleSubmit}
+    >
       <div className={styles.row}>
         <label htmlFor="cityName">City name</label>
         <input
