@@ -1,4 +1,4 @@
-import { useState, useEffect, useReducer } from 'react';
+import { useEffect, useReducer } from 'react';
 import { createContext, useContext } from 'react';
 
 const BASE_URL = 'http://localhost:8000';
@@ -11,6 +11,7 @@ const initialstate = {
   error: '',
 };
 
+//reducer for state management
 function reducer(state, action) {
   switch (action.type) {
     case 'loading':
@@ -55,8 +56,7 @@ function reducer(state, action) {
 
 // eslint-disable-next-line react/prop-types
 function CitiesProvider({ children }) {
-  //const { cities, isLoading, currentCity, error } = state;
-  const [{ cities, isLoading, currentCity, error }, dispatch] = useReducer(
+  const [{ cities, isLoading, currentCity }, dispatch] = useReducer(
     reducer,
     initialstate
   );
