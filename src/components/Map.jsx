@@ -46,41 +46,36 @@ export default function Map() {
     [geolocationPosition]
   );
 
-  return (
-    <div className={styles.mapContainer}>
-      {!geolocationPosition && (
-        <Button type="position" onClick={getPosition}>
-          {isPostionLoading ? 'Loading...' : '  Use my location'}
-        </Button>
-      )}
-      {/* use React Leaflet Library to  Display Posion on Map, based on passed co-ordinates */}
-      <MapContainer
-        className={styles.map}
-        center={mapPosition}
-        zoom={6}
-        scrollWheelZoom={true}
-      >
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
-        />
-        {cities.map((city) => (
-          <Marker
-            position={[city.position.lat, city.position.lng]}
-            key={city.id}
-          >
-            <Popup>
-              <span>{city.emoji}</span>
-              <span>{city.cityName}</span>
-            </Popup>
-          </Marker>
-        ))}
+  <div className={styles.mapContainer}>
+    {!geolocationPosition && (
+      <Button type="position" onClick={getPosition}>
+        {isPostionLoading ? 'Loading...' : '  Use my location'}
+      </Button>
+    )}
+    {/* use React Leaflet Library to  Display Posion on Map, based on passed co-ordinates */}
+    <MapContainer
+      className={styles.map}
+      center={mapPosition}
+      zoom={6}
+      scrollWheelZoom={true}
+    >
+      <TileLayer
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
+      />
+      {cities.map((city) => (
+        <Marker position={[city.position.lat, city.position.lng]} key={city.id}>
+          <Popup>
+            <span>{city.emoji}</span>
+            <span>{city.cityName}</span>
+          </Popup>
+        </Marker>
+      ))}
 
-        <ChangeCenter position={mapPosition} />
-        <DetectClick />
-      </MapContainer>
-    </div>
-  );
+      <ChangeCenter position={mapPosition} />
+      <DetectClick />
+    </MapContainer>
+  </div>;
 }
 
 //move map to currently seleected city
