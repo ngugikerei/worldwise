@@ -1,4 +1,4 @@
-import { useEffect, useReducer } from 'react';
+import { useCallback, useEffect, useReducer } from 'react';
 import { createContext, useContext } from 'react';
 
 const BASE_URL = 'http://localhost:8000';
@@ -62,18 +62,22 @@ function CitiesProvider({ children }) {
   );
 
   //get city data from API from passed-in id, to display in city item
-  async function getCity(id) {
-    if (Number(id) === currentCity.id) return;
-    dispatch({ type: 'loading' });
+  //use callback is used to prevent getCity from being called infinitely(value is used in a dependancy array)
+  const getCity = useCallback(
+    async function getCity(id) {
+      if (Number(id) === currentCity.id) return;
+      dispatch({ type: 'loading' });
 
-    try {
-      const res = await fetch(`${BASE_URL}/cities/${id}`);
-      const data = await res.json();
-      dispatch({ type: 'city/loaded', payload: data });
-    } catch (error) {
-      dispatch({ type: 'error', payload: 'Error fetching Data' });
-    }
-  }
+      try {
+        const res = await fetch(`${BASE_URL}/cities/${id}`);
+        const data = await res.json();
+        dispatch({ type: 'city/loaded', payload: data });
+      } catch (error) {
+        dispatch({ type: 'error', payload: 'Error fetching Data' });
+      }
+    },
+    [currentCity.id]
+  );
 
   //make POST request to API, to add new city
   async function addCity(newCity) {
